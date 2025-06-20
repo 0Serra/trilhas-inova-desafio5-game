@@ -356,3 +356,10 @@ MonoBehaviour:
   prefabArvore: {fileID: 7887336000552869049, guid: f84f8623bf62c524bbd39539da7355f4, type: 3}
   prefabAgua: {fileID: 5676049297960494586, guid: 03d67cf8a44aea741b139bca80c1325c, type: 3}
   posicaoInicial: {x: -8, y: -4}
+  posicoesDeAgua:
+  - {x: 2, y: 2}
+  - {x: 3, y: 2}
+  - {x: 4, y: 2}
+  - {x: 3, y: 3}
+  - {x: 4, y: 3}
+  - {x: 5, y: 3}
