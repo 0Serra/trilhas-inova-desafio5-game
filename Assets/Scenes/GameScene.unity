@@ -355,6 +355,8 @@ MonoBehaviour:
   linhasGrid: 5
   prefabArvore: {fileID: 7887336000552869049, guid: f84f8623bf62c524bbd39539da7355f4, type: 3}
   prefabAgua: {fileID: 5676049297960494586, guid: 03d67cf8a44aea741b139bca80c1325c, type: 3}
+  prefabFogo: {fileID: 1033965073083608126, guid: 5d87d0641c8a4f24ba87913b0998e3bf, type: 3}
+  prefabArvoreQueimada: {fileID: 3800665245958168596, guid: 9de3bf5d65ad30046889a15968a8bcc4, type: 3}
   posicoesDeAgua:
   - {x: 4, y: 3}
   - {x: 4, y: 2}
