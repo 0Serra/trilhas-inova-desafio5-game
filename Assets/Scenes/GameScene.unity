@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 234116288}
   - component: {fileID: 234116287}
-  - component: {fileID: 234116289}
+  - component: {fileID: 234116290}
   m_Layer: 0
   m_Name: Jogador
   m_TagString: Untagged
@@ -180,7 +180,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b12eacf5819ed264b9e2e44acfb8e021, type: 3}
   m_Color: {r: 0.4745098, g: 0.22745098, b: 0.5019608, a: 1}
   m_FlipX: 0
@@ -200,29 +200,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234116286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.893, y: -5.006, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &234116289
+--- !u!114 &234116290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234116286}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adc675c0814c89943be550687fb741b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 1df14e782a9c9f94ebe3b989cba7b91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTime: 0.2
-  gridSize: {x: 175, y: 175}
-  gridMin: {x: -960, y: -540}
-  gridMax: {x: 960, y: 540}
+  diretorDeGrid: {fileID: 1344790842}
+  posicaoInicial: {x: 4, y: 3}
+  tempoDeMovimento: 0.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,15 +350,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312ecfc58fd068a4cbdfd54b8d436d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colunasGrid: 17
-  linhasGrid: 9
+  posicaoInicial: {x: -8, y: -4}
+  colunasGrid: 5
+  linhasGrid: 5
   prefabArvore: {fileID: 7887336000552869049, guid: f84f8623bf62c524bbd39539da7355f4, type: 3}
   prefabAgua: {fileID: 5676049297960494586, guid: 03d67cf8a44aea741b139bca80c1325c, type: 3}
-  posicaoInicial: {x: -8, y: -4}
   posicoesDeAgua:
-  - {x: 2, y: 2}
-  - {x: 3, y: 2}
-  - {x: 4, y: 2}
-  - {x: 3, y: 3}
   - {x: 4, y: 3}
-  - {x: 5, y: 3}
+  - {x: 4, y: 2}

@@ -1,18 +1,19 @@
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ControladorDeGrid : MonoBehaviour
 {
+    [SerializeField] private Vector2 posicaoInicial;
+    public Vector2 PosicaoInicial => posicaoInicial;
     [SerializeField] private int colunasGrid;
+    public int ColunasGrid => linhasGrid;
     [SerializeField] private int linhasGrid;
+    public int LinhasGrid => linhasGrid;
     [SerializeField] private GameObject prefabArvore;
     [SerializeField] private GameObject prefabAgua;
-    [SerializeField] private Vector2 posicaoInicial;
     [SerializeField] private Vector2Int[] posicoesDeAgua;
     private Celula[,] gridArray;
 
-    private void Start()
+    private void Awake()
     {
         GerarGrid();
     }
@@ -58,6 +59,13 @@ public class ControladorDeGrid : MonoBehaviour
         return false;
     }
 
+    public Celula PegarCelula(int x, int y)
+    {
+        if (x < 0 || x >= colunasGrid || y < 0 || y >= linhasGrid) return null;
+
+        return gridArray[x, y];
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
@@ -66,7 +74,7 @@ public class ControladorDeGrid : MonoBehaviour
         {
             for (int j = 0; j < linhasGrid; j++)
             {
-                Vector3 pos = new Vector3(posicaoInicial.x + i, posicaoInicial.y + j, 0);
+                Vector3 pos = new(posicaoInicial.x + i, posicaoInicial.y + j, 0);
                 Gizmos.DrawWireCube(pos, Vector3.one);
             }
         }
@@ -77,7 +85,7 @@ public class ControladorDeGrid : MonoBehaviour
 
             foreach (var pos in posicoesDeAgua)
             {
-                Vector3 position = new(posicaoInicial.x + pos.x, posicaoInicial.y + pos.y, 0);
+                Vector3 position = new(posicaoInicial.x - 1 + pos.x, posicaoInicial.y - 1 + pos.y, 0);
                 Gizmos.DrawCube(position, Vector3.one * 0.8f);
             }
         }
