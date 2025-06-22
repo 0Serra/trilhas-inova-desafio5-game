@@ -20,6 +20,18 @@ public class Celula
         this.objeto = objeto;
     }
 
+    public void Destacar(bool estado)
+    {
+        if (objeto == null) return;
+
+        Transform destaque = objeto.transform.Find("Destaque");
+
+        if (destaque != null)
+        {
+            destaque.gameObject.SetActive(estado);
+        }
+    }
+
     public void DefinirTipo(TipoDeCelula novoTipo)
     {
         tipo = novoTipo;

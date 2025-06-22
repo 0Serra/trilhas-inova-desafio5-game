@@ -59,6 +59,12 @@ public class ControladorDeGrid : MonoBehaviour
         return false;
     }
 
+    public bool CelulaExiste(Vector2Int posicao)
+    {
+        return posicao.x >= 0 && posicao.x < colunasGrid &&
+               posicao.y >= 0 && posicao.y < linhasGrid;
+    }
+
     public Celula PegarCelula(int x, int y)
     {
         if (x < 0 || x >= colunasGrid || y < 0 || y >= linhasGrid) return null;

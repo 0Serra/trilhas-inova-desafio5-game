@@ -8,6 +8,11 @@ public class MovimentacaoDoJogador : MonoBehaviour
     [SerializeField] private float tempoDeMovimento;
     private Vector2Int posicaoAtual;
     private bool movendo = false;
+    private InteracaoDoJogador interação;
+
+    public Vector2Int PegarPosicaoAtual() => posicaoAtual;
+
+    public bool EstaMovendo() => movendo;
 
     private void Start()
     {
@@ -15,10 +20,13 @@ public class MovimentacaoDoJogador : MonoBehaviour
         transform.position = new(diretorDeGrid.PosicaoInicial.x + posicaoAtual.x,
                                   diretorDeGrid.PosicaoInicial.y + posicaoAtual.y,
                                   0);
+        interação = GetComponent<InteracaoDoJogador>();
     }
 
     void Update()
     {
+        if (interação.ModoDeSelecao()) return;
+
         Vector2Int direcao = Vector2Int.zero;
 
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
@@ -65,7 +73,7 @@ public class MovimentacaoDoJogador : MonoBehaviour
 
         Vector2Int posicaoAlvo = posicaoAtual + direcao;
 
-        if (!CelulaExiste(posicaoAlvo)) return;
+        if (!diretorDeGrid.CelulaExiste(posicaoAlvo)) return;
 
         Celula celulaAlvo = diretorDeGrid.PegarCelula(posicaoAlvo.x, posicaoAlvo.y);
 
@@ -73,11 +81,5 @@ public class MovimentacaoDoJogador : MonoBehaviour
         {
             StartCoroutine(IrParaCelula(posicaoAlvo));
         }
-    }
-
-    private bool CelulaExiste(Vector2Int posicao)
-    {
-        return posicao.x >= 0 && posicao.x < diretorDeGrid.ColunasGrid &&
-               posicao.y >= 0 && posicao.y < diretorDeGrid.LinhasGrid;
     }
 }
