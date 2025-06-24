@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diretorDeGrid: {fileID: 1344790842}
   posicaoInicial: {x: 1, y: 1}
-  tempoDeMovimento: 0.5
+  tempoDeMovimento: 0.3
 --- !u!114 &234116291
 MonoBehaviour:
   m_ObjectHideFlags: 0

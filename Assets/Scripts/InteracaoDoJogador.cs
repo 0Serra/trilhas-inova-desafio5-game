@@ -7,6 +7,14 @@ public class InteracaoDoJogador : MonoBehaviour
     private MovimentacaoDoJogador movimentacao;
     private bool selecionando = false;
     private List<Celula> celulasDestacadas = new();
+    private int indiceSelecionado = 0;
+    private Vector2Int? ultimoIndiceSelecionado = null;
+    private Vector2Int[] direcoes = {
+            Vector2Int.up,
+            Vector2Int.down,
+            Vector2Int.left,
+            Vector2Int.right
+            };
 
     public bool ModoDeSelecao() => selecionando;
 
@@ -27,6 +35,11 @@ public class InteracaoDoJogador : MonoBehaviour
         {
             SairDoModoSelecao();
         }
+
+        if (selecionando)
+        {
+            MoverSelecaoDeCelula();
+        }
     }
 
     private void EntrarNoModoSelecao()
@@ -38,13 +51,6 @@ public class InteracaoDoJogador : MonoBehaviour
 
         Vector2Int posicaoAtual = movimentacao.PegarPosicaoAtual();
 
-        Vector2Int[] direcoes = {
-            Vector2Int.up,
-            Vector2Int.down,
-            Vector2Int.left,
-            Vector2Int.right
-        };
-
         foreach (var direcao in direcoes)
         {
             Vector2Int posicaoDaCelula = posicaoAtual + direcao;
@@ -55,6 +61,22 @@ public class InteracaoDoJogador : MonoBehaviour
             celula.Destacar(true);
             celulasDestacadas.Add(celula);
         }
+
+        // indiceSelecionado = 0;
+
+        if (ultimoIndiceSelecionado.HasValue)
+        {
+            for (int i = 0; i < celulasDestacadas.Count; i++)
+            {
+                if (celulasDestacadas[i].posicao == ultimoIndiceSelecionado.Value)
+                {
+                    indiceSelecionado = i;
+                    break;
+                }
+            }
+        }
+
+        AtualizarBordaDeCelula();
     }
 
     private void SairDoModoSelecao()
@@ -63,10 +85,56 @@ public class InteracaoDoJogador : MonoBehaviour
 
         foreach (var celula in celulasDestacadas)
         {
+            Transform borda = celula.objeto.transform.Find("Borda");
+            borda.gameObject.SetActive(false);
             celula.Destacar(false);
+        }
+
+        if (celulasDestacadas.Count > indiceSelecionado)
+        {
+            ultimoIndiceSelecionado = celulasDestacadas[indiceSelecionado].posicao;
+        }
+        else
+        {
+            ultimoIndiceSelecionado = null;
         }
 
         celulasDestacadas.Clear();
         selecionando = false;
+    }
+
+    private void AtualizarBordaDeCelula()
+    {
+        for (int i = 0; i < celulasDestacadas.Count; i++)
+        {
+            Transform borda = celulasDestacadas[i].objeto.transform.Find("Borda");
+
+            borda.gameObject.SetActive(i == indiceSelecionado);
+        }
+    }
+
+    private void MoverSelecaoDeCelula()
+    {
+        Vector2Int direcaoSelecionada = Vector2Int.zero;
+
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) direcaoSelecionada = Vector2Int.up;
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) direcaoSelecionada = Vector2Int.down;
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) direcaoSelecionada = Vector2Int.left;
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) direcaoSelecionada = Vector2Int.right;
+
+        if (direcaoSelecionada == Vector2Int.zero) return;
+
+        Vector2Int posicaoAtual = movimentacao.PegarPosicaoAtual();
+        Vector2Int posicaoAlvo = posicaoAtual + direcaoSelecionada;
+
+        for (int i = 0; i < celulasDestacadas.Count; i++)
+        {
+            if (celulasDestacadas[i].posicao == posicaoAlvo)
+            {
+                indiceSelecionado = i;
+                AtualizarBordaDeCelula();
+                return;
+            }
+        }
     }
 }
