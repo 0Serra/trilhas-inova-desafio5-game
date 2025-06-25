@@ -5,6 +5,7 @@ public class InteracaoDoJogador : MonoBehaviour
 {
     [SerializeField] private ControladorDeGrid grid;
     private MovimentacaoDoJogador movimentacao;
+    private EstadosDoJogador estados;
     private bool selecionando = false;
     private List<Celula> celulasDestacadas = new();
     private int indiceSelecionado = 0;
@@ -15,12 +16,18 @@ public class InteracaoDoJogador : MonoBehaviour
             Vector2Int.left,
             Vector2Int.right
             };
+    private bool interagindo = false;
+    private float cronometroDeInteracao = 0f;
+    private AcoesDeInteracao interacaoAtual;
+    private Celula celulaInteragindo;
 
     public bool ModoDeSelecao() => selecionando;
 
     private void Start()
     {
         movimentacao = GetComponent<MovimentacaoDoJogador>();
+        estados = GetComponent<EstadosDoJogador>();
+
     }
 
     private void Update()
@@ -39,6 +46,17 @@ public class InteracaoDoJogador : MonoBehaviour
         if (selecionando)
         {
             MoverSelecaoDeCelula();
+        }
+
+        if (selecionando && Input.GetKeyDown(KeyCode.E))
+        {
+            TentarInteragir();
+        }
+
+        if (interagindo)
+        {
+            InteracaoEmProgresso();
+            return;
         }
     }
 
@@ -136,5 +154,74 @@ public class InteracaoDoJogador : MonoBehaviour
                 return;
             }
         }
+    }
+
+    private void TentarInteragir()
+    {
+        if (celulasDestacadas.Count == 0 || indiceSelecionado >= celulasDestacadas.Count) return;
+
+        Celula alvo = celulasDestacadas[indiceSelecionado];
+        AcoesDeInteracao interacao = PegarInteracaoDaCelula(alvo);
+
+        if (interacao == null || !interacao.PodeInteragir(alvo, estados)) return;
+
+        interagindo = true;
+        cronometroDeInteracao = 0f;
+        interacaoAtual = interacao;
+        celulaInteragindo = alvo;
+
+        SairDoModoSelecao();
+        celulaInteragindo.Destacar(true);
+    }
+
+    private void InteracaoEmProgresso()
+    {
+        if (!Input.GetKey(KeyCode.E))
+        {
+            CancelarInteracao();
+            return;
+        }
+
+        cronometroDeInteracao += Time.deltaTime;
+
+        if (cronometroDeInteracao > interacaoAtual.Duracao)
+        {
+            ConcluirInteracao();
+        }
+    }
+
+    private void CancelarInteracao()
+    {
+        interagindo = false;
+        celulaInteragindo.Destacar(false);
+        celulaInteragindo = null;
+        interacaoAtual = null;
+
+
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            EntrarNoModoSelecao();
+        }
+    }
+
+    private void ConcluirInteracao()
+    {
+        interagindo = false;
+
+        interacaoAtual.Interagir(celulaInteragindo, estados);
+
+        celulaInteragindo.Destacar(false);
+        celulaInteragindo = null;
+        interacaoAtual = null;
+    }
+
+    private AcoesDeInteracao PegarInteracaoDaCelula(Celula celula)
+    {
+        if (celula.tipo == TipoDeCelula.Agua && !estados.TemAgua)
+            return new AcaoColetarAgua();
+        else if (celula.tipo == TipoDeCelula.Fogo && estados.TemAgua)
+            return new AcaoApagarFogo();
+
+        return null;
     }
 }

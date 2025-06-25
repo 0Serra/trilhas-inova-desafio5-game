@@ -158,7 +158,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b12eacf5819ed264b9e2e44acfb8e021, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5176471}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.54509807}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2018174255225718669}
   - component: {fileID: 2247474235933071843}
+  - component: {fileID: 9039004291958098960}
   m_Layer: 0
   m_Name: Arvore
   m_TagString: Untagged
@@ -243,8 +244,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b12eacf5819ed264b9e2e44acfb8e021, type: 3}
-  m_Color: {r: 0.078431375, g: 0.627451, b: 0.18039216, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1196409a23dacfa45acc7017acdd9019, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -254,3 +255,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9039004291958098960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7887336000552869049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7641f8fa0dbd57d418f8a6ecb33a3c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteFogo: {fileID: 21300000, guid: e681e835ee409af46befc5aa51e07726, type: 3}
+  spriteCinzas: {fileID: 21300000, guid: 5d17a8ee38f36984d97116b3349e5fb1, type: 3}

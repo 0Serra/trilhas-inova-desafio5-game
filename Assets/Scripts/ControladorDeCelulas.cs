@@ -4,7 +4,8 @@ public enum TipoDeCelula
 {
     Arvore,
     Fogo,
-    Agua
+    Agua,
+    Cinzas
 }
 
 public class Celula
@@ -35,5 +36,25 @@ public class Celula
     public void DefinirTipo(TipoDeCelula novoTipo)
     {
         tipo = novoTipo;
+    }
+
+    public void MudarSprite(string spriteNome)
+    {
+        SpriteRenderer renderer = objeto.GetComponent<SpriteRenderer>();
+
+        SpritesArvores visual = objeto.GetComponent<SpritesArvores>();
+
+        Sprite sprite = typeof(SpritesArvores).GetField(spriteNome).GetValue(visual) as Sprite;
+
+        renderer.sprite = sprite;
+    }
+
+    public void ApagarFogo()
+    {
+        if (tipo != TipoDeCelula.Fogo) return;
+
+        tipo = TipoDeCelula.Cinzas;
+
+        MudarSprite("spriteCinzas");
     }
 }

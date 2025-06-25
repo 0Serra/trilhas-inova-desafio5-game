@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 234116287}
   - component: {fileID: 234116290}
   - component: {fileID: 234116291}
+  - component: {fileID: 234116292}
   m_Layer: 0
   m_Name: Jogador
   m_TagString: Untagged
@@ -236,6 +237,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 1344790842}
+--- !u!114 &234116292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234116286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76b242d86888bd42b7709b3ddaef6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,3 +385,6 @@ MonoBehaviour:
   posicoesDeAgua:
   - {x: 4, y: 3}
   - {x: 4, y: 2}
+  posicoesDeFogo:
+  - {x: 1, y: 5}
+  - {x: 2, y: 5}

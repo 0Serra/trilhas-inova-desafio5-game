@@ -11,6 +11,7 @@ public class ControladorDeGrid : MonoBehaviour
     [SerializeField] private GameObject prefabArvore;
     [SerializeField] private GameObject prefabAgua;
     [SerializeField] private Vector2Int[] posicoesDeAgua;
+    [SerializeField] private Vector2Int[] posicoesDeFogo;
     private Celula[,] gridArray;
 
     private void Awake()
@@ -35,13 +36,24 @@ public class ControladorDeGrid : MonoBehaviour
                     prefab = prefabAgua;
                 }
 
+                if (PosicaoFogoInicial(i + 1, j + 1))
+                {
+                    tipo = TipoDeCelula.Fogo;
+                }
+
                 Vector2 posicao = new(posicaoInicial.x + i, posicaoInicial.y + j);
                 GameObject objCelula = Instantiate(prefab, posicao, Quaternion.identity);
-                objCelula.name = $"{tipo}({i}, {j})";
-                objCelula.transform.parent = transform;
 
                 Celula celula = new(new Vector2Int(i, j), tipo, objCelula);
                 gridArray[i, j] = celula;
+
+                if (PosicaoFogoInicial(i + 1, j + 1))
+                {
+                    celula.MudarSprite("spriteFogo");
+                }
+
+                objCelula.name = $"{tipo}({i}, {j})";
+                objCelula.transform.parent = transform;
             }
         }
     }
@@ -49,6 +61,19 @@ public class ControladorDeGrid : MonoBehaviour
     private bool PosicaoDeAgua(int x, int y)
     {
         foreach (var pos in posicoesDeAgua)
+        {
+            if (pos.x == x && pos.y == y)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool PosicaoFogoInicial(int x, int y)
+    {
+        foreach (var pos in posicoesDeFogo)
         {
             if (pos.x == x && pos.y == y)
             {
@@ -90,6 +115,17 @@ public class ControladorDeGrid : MonoBehaviour
             Gizmos.color = Color.blue;
 
             foreach (var pos in posicoesDeAgua)
+            {
+                Vector3 position = new(posicaoInicial.x - 1 + pos.x, posicaoInicial.y - 1 + pos.y, 0);
+                Gizmos.DrawCube(position, Vector3.one * 0.8f);
+            }
+        }
+
+        if (posicoesDeFogo != null)
+        {
+            Gizmos.color = Color.red;
+
+            foreach (var pos in posicoesDeFogo)
             {
                 Vector3 position = new(posicaoInicial.x - 1 + pos.x, posicaoInicial.y - 1 + pos.y, 0);
                 Gizmos.DrawCube(position, Vector3.one * 0.8f);
