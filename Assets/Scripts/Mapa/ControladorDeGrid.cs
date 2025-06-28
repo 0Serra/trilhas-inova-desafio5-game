@@ -5,7 +5,7 @@ public class ControladorDeGrid : MonoBehaviour
     [SerializeField] private Vector2 posicaoInicial;
     public Vector2 PosicaoInicial => posicaoInicial;
     [SerializeField] private int colunasGrid;
-    public int ColunasGrid => linhasGrid;
+    public int ColunasGrid => colunasGrid;
     [SerializeField] private int linhasGrid;
     public int LinhasGrid => linhasGrid;
     [SerializeField] private GameObject prefabArvore;

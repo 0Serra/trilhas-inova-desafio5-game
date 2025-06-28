@@ -5,7 +5,8 @@ public enum TipoDeCelula
     Arvore,
     Fogo,
     Agua,
-    Cinzas
+    Cinzas,
+    Broto
 }
 
 public class Celula

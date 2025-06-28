@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 234116287}
   - component: {fileID: 234116290}
   - component: {fileID: 234116291}
+  - component: {fileID: 234116293}
   - component: {fileID: 234116292}
   m_Layer: 0
   m_Name: Jogador
@@ -235,7 +236,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234116286}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 778badec43716404a96529fb5a60ffa7, type: 3}
   m_Name: 
@@ -253,6 +254,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76b242d86888bd42b7709b3ddaef6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &234116293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234116286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d22fd35e38da9b418f3b69466de02e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 1344790842}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +351,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &540498642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 540498643}
+  - component: {fileID: 540498644}
+  m_Layer: 0
+  m_Name: CrescedorDeBrotos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &540498643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540498642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.653377, y: -0.6651113, z: -0.020821823}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &540498644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540498642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde7713b1bb092f4f9e18843c3f4c6a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoParaCrescer: 2
 --- !u!1 &1344790840
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,13 +441,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posicaoInicial: {x: -8, y: -4}
-  colunasGrid: 5
-  linhasGrid: 5
+  colunasGrid: 16
+  linhasGrid: 6
   prefabArvore: {fileID: 7887336000552869049, guid: f84f8623bf62c524bbd39539da7355f4, type: 3}
   prefabAgua: {fileID: 5676049297960494586, guid: 03d67cf8a44aea741b139bca80c1325c, type: 3}
   posicoesDeAgua:
   - {x: 4, y: 3}
   - {x: 4, y: 2}
   posicoesDeFogo:
-  - {x: 1, y: 5}
-  - {x: 2, y: 5}
+  - {x: 8, y: 3}
+--- !u!1 &1419179990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1419179991}
+  - component: {fileID: 1419179992}
+  m_Layer: 0
+  m_Name: PropagadorDeFogo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1419179991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419179990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.307804, y: 2.0958996, z: -0.04226908}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1419179992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419179990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb197afd17792c842bcf8657ea8e64f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 1344790842}
+  intervaloDePropagacao: 3
+  chanceDePropagar: 0.2
