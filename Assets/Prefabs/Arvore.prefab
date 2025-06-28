@@ -168,6 +168,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6075993066752769251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8698729127486684676}
+  - component: {fileID: 4210345310405290242}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8698729127486684676
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075993066752769251}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.24122, y: 0.96561736, z: -0.020281333}
+  m_LocalScale: {x: 1.1111112, y: 1.1111112, z: 1.1111112}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2018174255225718669}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4210345310405290242
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075993066752769251}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32ac50f19914a5a4ea27fdc9e42dc1b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7887336000552869049
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +232,7 @@ GameObject:
   - component: {fileID: 2018174255225718669}
   - component: {fileID: 2247474235933071843}
   - component: {fileID: 9039004291958098960}
+  - component: {fileID: -6327684704977586799}
   m_Layer: 0
   m_Name: Arvore
   m_TagString: Untagged
@@ -200,6 +254,7 @@ Transform:
   m_Children:
   - {fileID: 9149613642391590985}
   - {fileID: 7931223691954288387}
+  - {fileID: 8698729127486684676}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -244,7 +299,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1196409a23dacfa45acc7017acdd9019, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcd336e0f28c9934884d7bb089df8956, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -267,5 +322,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7641f8fa0dbd57d418f8a6ecb33a3c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteFogo: {fileID: 21300000, guid: e681e835ee409af46befc5aa51e07726, type: 3}
-  spriteCinzas: {fileID: 21300000, guid: 5d17a8ee38f36984d97116b3349e5fb1, type: 3}
+  spriteCinzas: {fileID: 21300000, guid: 142b3aa7b9c18eb4d984893f334f90af, type: 3}
+  animacaoFogoController: {fileID: 9100000, guid: 32ac50f19914a5a4ea27fdc9e42dc1b0, type: 2}
+--- !u!95 &-6327684704977586799
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7887336000552869049}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
