@@ -12,5 +12,7 @@ public class AcaoApagarFogo : AcoesDeInteracao
     {
         estadosDoJogador.UsarAgua();
         celulaAlvo.ApagarFogo();
+
+        Pontuacao.Instance.PontuarApagarFogo();
     }
 }

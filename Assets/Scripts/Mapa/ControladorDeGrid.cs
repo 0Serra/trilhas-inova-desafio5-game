@@ -44,6 +44,8 @@ public class ControladorDeGrid : MonoBehaviour
                 Vector2 posicao = new(posicaoInicial.x + i, posicaoInicial.y + j);
                 GameObject objCelula = Instantiate(prefab, posicao, Quaternion.identity);
 
+                ControladorDeFimDeJogo.Instance.RegistrarCelula(tipo);
+
                 Celula celula = new(new Vector2Int(i, j), tipo, objCelula);
                 gridArray[i, j] = celula;
 

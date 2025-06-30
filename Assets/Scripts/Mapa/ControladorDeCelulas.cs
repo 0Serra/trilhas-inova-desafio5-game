@@ -36,7 +36,10 @@ public class Celula
 
     public void DefinirTipo(TipoDeCelula novoTipo)
     {
+        TipoDeCelula antigoTipo = tipo;
         tipo = novoTipo;
+
+        ControladorDeFimDeJogo.Instance.AlterarTipoCelula(antigoTipo, novoTipo);
     }
 
     public void MudarSprite(string spriteNome)
@@ -100,7 +103,8 @@ public class Celula
     {
         if (tipo != TipoDeCelula.Fogo) return;
 
-        tipo = TipoDeCelula.Cinzas;
+        // tipo = TipoDeCelula.Cinzas;
+        DefinirTipo(TipoDeCelula.Cinzas);
 
         MudarSprite("spriteCinzas");
 

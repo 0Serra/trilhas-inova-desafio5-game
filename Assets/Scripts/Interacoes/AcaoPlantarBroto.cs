@@ -14,5 +14,7 @@ public class AcaoPlantarBroto : AcoesDeInteracao
         celulaAlvo.MudarSprite("spriteBroto");
 
         CrescedorDeBrotos.Instance.ComecarCrescimento(celulaAlvo);
+
+        Pontuacao.Instance.PontuarPlantarBroto();
     }
 }

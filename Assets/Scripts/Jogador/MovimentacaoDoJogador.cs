@@ -138,7 +138,7 @@ public class MovimentacaoDoJogador : MonoBehaviour
 
         while (tempoPassado < duracao)
         {
-            if (ControladorDeJogo.Instance.estadoAtual == EstadoDoJogo.EmPergunta)
+            if (Time.timeScale < 1)
             {
                 audioSource.Stop();
                 yield break;

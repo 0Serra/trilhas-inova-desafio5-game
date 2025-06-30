@@ -68,6 +68,7 @@ public class ControladorDeJogo : MonoBehaviour
             estadoAtual = EstadoDoJogo.EmPowerup;
 
             ControladorDePowerUp.Instance.GerarPowerupAleatorio();
+            Pontuacao.Instance.PontuarAcertoPergunta();
         }
         else
         {
