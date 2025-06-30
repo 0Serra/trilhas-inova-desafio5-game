@@ -31,7 +31,6 @@ public class InteracaoPorClique : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("CLicou");
             TentarIniciarInteracao();
         }
 

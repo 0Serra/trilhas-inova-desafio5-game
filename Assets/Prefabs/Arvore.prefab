@@ -110,8 +110,8 @@ Transform:
   m_GameObject: {fileID: 4780277958880005244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1111112, y: 1.1111112, z: 1.1111112}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2018174255225718669}
   m_RootOrder: 1
@@ -157,8 +157,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b12eacf5819ed264b9e2e44acfb8e021, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.54509807}
+  m_Sprite: {fileID: 21300000, guid: 590b670f6c8e61242be66c9f1d99c676, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -324,6 +324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7641f8fa0dbd57d418f8a6ecb33a3c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteArvore: {fileID: 21300000, guid: bcd336e0f28c9934884d7bb089df8956, type: 3}
+  spriteBroto: {fileID: 21300000, guid: c82c08b9339bbff4fb6136bd86375285, type: 3}
   spriteCinzas: {fileID: 21300000, guid: 142b3aa7b9c18eb4d984893f334f90af, type: 3}
   animacaoFogoController: {fileID: 9100000, guid: 32ac50f19914a5a4ea27fdc9e42dc1b0, type: 2}
   somDeQueimando: {fileID: 8300000, guid: 7bcd100877766a34b968ae293e0f367e, type: 3}

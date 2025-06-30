@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SpritesArvores : MonoBehaviour
 {
+    public Sprite spriteArvore;
+    public Sprite spriteBroto;
     public Sprite spriteCinzas;
+
     public RuntimeAnimatorController animacaoFogoController;
 
     public AudioClip somDeQueimando;
@@ -19,7 +22,7 @@ public class SpritesArvores : MonoBehaviour
     {
         if (audioSource != null && clip != null)
         {
-            audioSource.Stop(); 
+            audioSource.Stop();
             audioSource.clip = clip;
             audioSource.loop = loop;
             audioSource.Play();
