@@ -1,3 +1,4 @@
+using UnityEngine;
 
 public class AcaoColetarAgua : AcoesDeInteracao
 {
@@ -11,5 +12,20 @@ public class AcaoColetarAgua : AcoesDeInteracao
     public override void Interagir(Celula celulaAlvo, EstadosDoJogador estadosDoJogador)
     {
         estadosDoJogador.ColetarAgua();
+
+        if (celulaAlvo.objeto != null)
+        {
+            AudioSource audio = celulaAlvo.objeto.GetComponent<AudioSource>();
+
+            if (audio != null && audio.clip != null)
+            {
+                audio.loop = false;
+                audio.Play();
+            }
+            else
+            {
+                Debug.LogWarning("AudioSource ou AudioClip não encontrado no prefab de água.");
+            }
+        }
     }
 }

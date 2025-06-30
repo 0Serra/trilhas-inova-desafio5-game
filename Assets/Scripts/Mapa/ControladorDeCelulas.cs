@@ -49,15 +49,16 @@ public class Celula
 
         if (spriteNome == "spriteFogo")
         {
-            // Ativa o Animator e troca o controller para a animação de fogo
             if (animator != null && visual != null && visual.animacaoFogoController != null)
             {
                 animator.enabled = true;
                 animator.runtimeAnimatorController = visual.animacaoFogoController;
 
-                // Remove sprite estático para não sobrepor a animação
                 if (renderer != null)
                     renderer.sprite = null;
+
+                // Tocar som de fogo (looping)
+                TocarSomQueimando(visual);
             }
             else
             {
@@ -66,12 +67,14 @@ public class Celula
         }
         else
         {
-            // Para sprites estáticos, desliga o Animator e aplica o sprite
             if (animator != null)
                 animator.enabled = false;
 
             if (visual != null)
             {
+                // Parar som de fogo se ainda estiver tocando
+                visual.PararSom();
+
                 var campoSprite = typeof(SpritesArvores).GetField(spriteNome);
                 if (campoSprite != null)
                 {
@@ -100,5 +103,25 @@ public class Celula
         tipo = TipoDeCelula.Cinzas;
 
         MudarSprite("spriteCinzas");
+
+        // Tocar som de apagar fogo (uma vez)
+        SpritesArvores visual = objeto.GetComponent<SpritesArvores>();
+        if (visual != null)
+        {
+            visual.TocarSom(visual.somDeApagarFogo);
+        }
+    }
+
+    private void TocarSomQueimando(SpritesArvores visual)
+    {
+        if (visual == null) return;
+
+        AudioSource audio = objeto.GetComponent<AudioSource>();
+        if (audio == null)
+            audio = objeto.AddComponent<AudioSource>();
+
+        audio.clip = visual.somDeQueimando;
+        audio.loop = true;
+        audio.Play();
     }
 }
