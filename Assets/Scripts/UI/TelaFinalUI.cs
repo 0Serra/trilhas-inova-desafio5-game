@@ -21,6 +21,12 @@ public class TelaFinalUI : MonoBehaviour
     [SerializeField] private Button botaoTentarNovamente;
     [SerializeField] private Button botaoMenuPrincipal;
 
+    [Header("Efeitos Sonoros")]
+    [SerializeField] private AudioClip somVitoria;
+    [SerializeField] private AudioClip somDerrota;
+
+    private AudioSource audioSource;
+
     private void Start()
     {
         painelVitoria.SetActive(false);
@@ -30,6 +36,8 @@ public class TelaFinalUI : MonoBehaviour
         botaoMenuPrincipal.onClick.AddListener(() => SceneManager.LoadScene("Main Menu"));
 
         botaoSalvarPontuacao.onClick.AddListener(SalvarPontuacao);
+
+        audioSource = GetComponent<AudioSource>();
 
         if (DadosFinaisDeJogo.Venceu)
             AtualizarRanking();
@@ -44,11 +52,19 @@ public class TelaFinalUI : MonoBehaviour
         textoPontuacaoFeita.text = pontuacaoFeita.ToString();
         textoBonus.text = bonus.ToString();
         textoTotal.text = total.ToString();
+
+        // 🔊 Toca o som de vitória
+        if (somVitoria != null && audioSource != null)
+            audioSource.PlayOneShot(somVitoria);
     }
 
     public void MostrarDerrota()
     {
         painelDerrota.SetActive(true);
+
+        // 🔊 Toca o som de derrota
+        if (somDerrota != null && audioSource != null)
+            audioSource.PlayOneShot(somDerrota);
     }
 
     private void SalvarPontuacao()
