@@ -16,6 +16,7 @@ public class ControladorDeJogo : MonoBehaviour
     [SerializeField] private FazerPergunta desafioDePergunta;
 
     [SerializeField] private float intervaloEntrePerguntas;
+    [SerializeField] private InteracaoPorClique interacaoPorClique;
 
     public EstadoDoJogo estadoAtual = EstadoDoJogo.Jogando;
     private float cronometroPergunta;
@@ -56,6 +57,7 @@ public class ControladorDeJogo : MonoBehaviour
         estadoAtual = EstadoDoJogo.EmPergunta;
         cronometroPergunta = intervaloEntrePerguntas;
 
+        interacaoPorClique.CancelarInteracao();
         desafioDePergunta.MostrarPergunta(ReceberResposta);
         ControlarTempo(false);
     }

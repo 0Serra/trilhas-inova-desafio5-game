@@ -7,12 +7,12 @@ public class Pontuacao : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI textoPontuacao;
 
-    [SerializeField] private int pontosApagarFogo = 10;
-    [SerializeField] private int pontosPlantarBroto = 5;
-    [SerializeField] private int pontosAcertoPergunta = 15;
-    [SerializeField] private int pontosPorArvoreFinal = 2;
+    [SerializeField] private int pontosApagarFogo;
+    [SerializeField] private int pontosPlantarBroto;
+    [SerializeField] private int pontosAcertoPergunta;
+    public int PontosPorArvoreFinal;
 
-    private int pontuacaoAtual = 0;
+    public int PontuacaoAtual { get; private set; }
 
     private void Awake()
     {
@@ -29,12 +29,12 @@ public class Pontuacao : MonoBehaviour
 
     private void AtualizarPontuacao()
     {
-        textoPontuacao.text = "Pontuação: " + pontuacaoAtual;
+        textoPontuacao.text = "Pontuação: " + PontuacaoAtual;
     }
 
     public void AdicionarPontos(int pontos)
     {
-        pontuacaoAtual += pontos;
+        PontuacaoAtual += pontos;
         AtualizarPontuacao();
     }
 
@@ -44,11 +44,11 @@ public class Pontuacao : MonoBehaviour
 
     public void PontuarFinal(int arvoresSaudaveis)
     {
-        AdicionarPontos(arvoresSaudaveis * pontosPorArvoreFinal);
+        AdicionarPontos(arvoresSaudaveis * PontosPorArvoreFinal);
     }
 
     public int PegarPontuacao()
     {
-        return pontuacaoAtual;
+        return PontuacaoAtual;
     }
 }

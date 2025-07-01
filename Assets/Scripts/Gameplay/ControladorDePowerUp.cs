@@ -60,7 +60,7 @@ public class ControladorDePowerUp : MonoBehaviour
             EsconderAreaDaChuva();
         }
 
-        if (Input.GetMouseButtonDown(0) && cliqueDeUso > 1)
+        if (Input.GetMouseButtonDown(0))
         {
             cliqueDeUso = 0;
 

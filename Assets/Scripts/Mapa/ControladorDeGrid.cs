@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ControladorDeGrid : MonoBehaviour
@@ -14,7 +15,7 @@ public class ControladorDeGrid : MonoBehaviour
     [SerializeField] private Vector2Int[] posicoesDeFogo;
     private Celula[,] gridArray;
 
-    private void Awake()
+    private void Start()
     {
         GerarGrid();
     }
@@ -132,6 +133,14 @@ public class ControladorDeGrid : MonoBehaviour
                 Vector3 position = new(posicaoInicial.x - 1 + pos.x, posicaoInicial.y - 1 + pos.y, 0);
                 Gizmos.DrawCube(position, Vector3.one * 0.8f);
             }
+        }
+    }
+
+    public IEnumerable<Celula> TodasAsCelulas()
+    {
+        foreach (var celula in gridArray)
+        {
+            yield return celula;
         }
     }
 }

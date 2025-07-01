@@ -147,7 +147,7 @@ public class InteracaoPorClique : MonoBehaviour
         }
     }
 
-    private void CancelarInteracao()
+    public void CancelarInteracao()
     {
         mousePressionado = false;
 
