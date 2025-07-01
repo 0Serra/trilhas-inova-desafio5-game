@@ -73,9 +73,7 @@ Você é um bombeiro florestal em uma floresta ameaçada pelo fogo. Seu objetivo
 
 - Menu principal com:
   - Novo Jogo
-  - Tutorial
   - Recordes
-  - Configurações
   - Sair
 - Durante o jogo:
   - Pontuação no canto superior esquerdo;
