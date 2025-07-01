@@ -32,7 +32,7 @@ public class Pontuacao : MonoBehaviour
 
     private void AtualizarPontuacao()
     {
-        textoPontuacao.text = "Pontuação: " + PontuacaoAtual;
+        textoPontuacao.text = PontuacaoAtual.ToString();
     }
 
     public void AdicionarPontos(int pontos)

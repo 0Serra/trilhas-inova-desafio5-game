@@ -1,5 +1,9 @@
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class InteracaoPorClique : MonoBehaviour
 {
@@ -12,6 +16,7 @@ public class InteracaoPorClique : MonoBehaviour
     private Celula celulaInteragindo;
     private AcoesDeInteracao interacaoAtual;
     private Celula ultimaComBorda = null;
+    private MostrarBolha mostrarBolha;
 
     private float cronometroInteracao = 0f;
     private bool mousePressionado = false;
@@ -20,6 +25,7 @@ public class InteracaoPorClique : MonoBehaviour
     {
         estados = GetComponent<EstadosDoJogador>();
         movimentacao = GetComponent<MovimentacaoDoJogador>();
+        mostrarBolha = GetComponent<MostrarBolha>();
     }
 
     private void Update()
@@ -137,6 +143,15 @@ public class InteracaoPorClique : MonoBehaviour
         {
             interacaoAtual.Interagir(celulaInteragindo, estados);
             celulaInteragindo.Destacar(false);
+
+            if (interacaoAtual is AcaoColetarAgua)
+            {
+                mostrarBolha.MostrarGota(true);
+            }
+            if (interacaoAtual is AcaoApagarFogo)
+            {
+                mostrarBolha.MostrarGota(false);
+            }
 
             Transform borda = celulaInteragindo.objeto.transform.Find("Borda");
             if (borda != null) borda.gameObject.SetActive(false);

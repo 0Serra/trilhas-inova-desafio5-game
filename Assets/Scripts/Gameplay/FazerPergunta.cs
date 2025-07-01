@@ -89,15 +89,15 @@ public class FazerPergunta : MonoBehaviour
         bool acertou = (respostaEscolhida == perguntaAtual.indiceCorreto);
         if (respostaEscolhida == -1)
         {
-            textoResultado.text = "Tempo esgotado! Você não respondeu.\nClique para continuar.";
+            textoResultado.text = "TEMPO ESGOTADO!\n\n\nClique para continuar";
         }
         else if (acertou)
         {
-            textoResultado.text = "Você acertou! Power-up desbloqueado!\nClique para continuar.";
+            textoResultado.text = "ACERTOU!\n\nPower-up desbloqueado!\n\n\nClique para continuar";
         }
         else
         {
-            textoResultado.text = "Você errou!\nClique para continuar.";
+            textoResultado.text = "ERROU!\n\n\nClique para continuar";
         }
 
         callbackResposta?.Invoke(acertou);
