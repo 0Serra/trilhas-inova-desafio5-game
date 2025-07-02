@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TelaLogin.unity
     guid: d68232abab2a42944b23cd64ab5bc5eb
   - enabled: 1

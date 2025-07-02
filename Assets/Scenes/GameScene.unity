@@ -1788,8 +1788,8 @@ MonoBehaviour:
   textoTimer: {fileID: 1661964555}
   painelResultado: {fileID: 1854659703}
   textoResultado: {fileID: 1644834772}
-  bancoDePerguntas: {fileID: 11400000, guid: 7d744a7b5f324aa41977849a475c0c1e, type: 2}
-  tempoParaResponder: 10
+  bancoDePerguntas: {fileID: 11400000, guid: 33b075f81de2bb744bd30a0589b7761b, type: 2}
+  tempoParaResponder: 15
 --- !u!4 &1092908516
 Transform:
   m_ObjectHideFlags: 0
@@ -2251,7 +2251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 1344790842}
   intervaloDePropagacao: 3
-  chanceDePropagar: 0.3
+  chanceDePropagar: 0.4
 --- !u!1 &1457134255
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2cdb4dca895984daa3e9e2c6d965ba, type: 3}
+  m_Name: PerguntasOficiais
+  m_EditorClassIdentifier: 
+  perguntas:
+  - enunciado: "Queimadas s\xE3o uma pr\xE1tica agr\xEDcola segura e recomendada
+      em todas as situa\xE7\xF5es."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Jogar bitucas de cigarro acesas \xE0s margens de rodovias n\xE3o
+      representa um risco significativo de inc\xEAndio"
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Fazer uma fogueira em \xE1reas de camping \xE9 sempre permitido,
+      desde que seja pequena"
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: A limpeza de terrenos, removendo mato seco e lixo, ajuda a prevenir
+      queimadas.
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 0
+  - enunciado: "Soltar bal\xF5es \xE9 uma tradi\xE7\xE3o cultural inofensiva e n\xE3o
+      causa inc\xEAndios."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Em caso de avistar um foco de inc\xEAndio, a primeira atitude deve
+      ser tentar apag\xE1-lo sozinho. "
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Queimar lixo dom\xE9stico no quintal \xE9 uma forma segura de se
+      livrar dos res\xEDduos."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Manter a vegeta\xE7\xE3o muito pr\xF3xima \xE0s constru\xE7\xF5es
+      (casas, galp\xF5es) aumenta o risco em caso de inc\xEAndio florestal. "
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 0
+  - enunciado: "As queimadas n\xE3o afetam a qualidade do ar e a sa\xFAde respirat\xF3ria
+      da popula\xE7\xE3o."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Se ficar preso em um inc\xEAndio florestal, voc\xEA deve correr para
+      um local mais alto."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "A legisla\xE7\xE3o brasileira permite a queimada para limpeza de
+      terreno em \xE1rea urbana sem qualquer autoriza\xE7\xE3o"
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Ve\xEDculos com o escapamento desregulado podem soltar fa\xEDscas
+      e iniciar um inc\xEAndio na vegeta\xE7\xE3o seca"
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 0
+  - enunciado: As queimadas contribuem para o agravamento do efeito estufa.
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 0
+  - enunciado: "Se a fuma\xE7a de uma queimada estiver densa, cobrir o rosto com
+      um pano seco \xE9 a melhor prote\xE7\xE3o"
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "A 'queima controlada' para fins agr\xEDcolas pode ser feita em qualquer
+      dia, independentemente das condi\xE7\xF5es do tempo."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Al\xE9m de destruir a flora, as queimadas tamb\xE9m causam a morte
+      de muitos animais silvestres."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 0
+  - enunciado: "Linhas de transmiss\xE3o de energia el\xE9trica n\xE3o oferecem risco
+      de inc\xEAndio e n\xE3o s\xE3o afetadas por eles."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Ap\xF3s uma queimada, o solo fica mais f\xE9rtil e fortalecido."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Deixar garrafas de vidro ou cacos em \xE1reas de mata n\xE3o representa
+      perigo de inc\xEAndio"
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Denunciar focos de inc\xEAndio ou pr\xE1ticas ilegais de queimada
+      \xE9 um ato de cidadania."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 0
+  - enunciado: "A maioria dos grandes inc\xEAndios florestais no Brasil come\xE7a
+      por causas naturais, como raios. "
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "As queimadas n\xE3o t\xEAm impacto sobre rios e nascentes, pois ocorrem
+      apenas na superf\xEDcie do solo."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Armazenar lenha ou outros materiais inflam\xE1veis encostados na
+      parede externa da casa n\xE3o aumenta o risco de inc\xEAndio."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "Ap\xF3s um inc\xEAndio, a vegeta\xE7\xE3o nativa se recupera rapidamente
+      e volta ao seu estado original em pouco tempo."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
+  - enunciado: "O \xFAnico preju\xEDzo econ\xF4mico das queimadas \xE9 a perda da
+      madeira."
+    alternativaA: Verdadeiro
+    alternativaB: Falso
+    indiceCorreto: 1
