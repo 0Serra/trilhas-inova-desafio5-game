@@ -3,34 +3,34 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    
+    [SerializeField] TransicaoDeCena transicaoDeCena;
+
     public void NovoJogo()
     {
-        SceneManager.LoadScene("GameScene");
+        transicaoDeCena.TransicionarParaCena("GameScene");
     }
 
-    
-    /*public void Tutorial()
-    {
-        
-        Debug.Log("");
-    }
 
-    public void Recordes()
-    {}
-        Debug.Log("");
-    }
+    // public void Tutorial()
+    // {
 
-    public void Configuracoes()
-    {
-        Debug.Log("");
-    }
+    //     Debug.Log("");
+    // }
 
-    
+    // public void Recordes()
+    // {}
+    //     Debug.Log("");
+    // }
+
+    // public void Configuracoes()
+    // {
+    //     Debug.Log("");
+    // }
+
+
     public void Sair()
     {
-        Debug.Log("Sair do jogo.");
+        Debug.Log("SAINDO!");
         Application.Quit();
     }
-    */
 }

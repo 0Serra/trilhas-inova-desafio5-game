@@ -19,7 +19,8 @@ public class TelaFinalUI : MonoBehaviour
     [SerializeField] private GameObject linhaRankingPrefab;
 
     [SerializeField] private Button botaoTentarNovamente;
-    [SerializeField] private Button botaoMenuPrincipal;
+    [SerializeField] private Button botaoMenuPrincipalDerrota;
+    [SerializeField] private Button botaoMenuPrincipalVitoria;
 
     [Header("Efeitos Sonoros")]
     [SerializeField] private AudioClip somVitoria;
@@ -33,7 +34,8 @@ public class TelaFinalUI : MonoBehaviour
         painelDerrota.SetActive(false);
 
         botaoTentarNovamente.onClick.AddListener(() => SceneManager.LoadScene("GameScene"));
-        botaoMenuPrincipal.onClick.AddListener(() => SceneManager.LoadScene("Main Menu"));
+        botaoMenuPrincipalDerrota.onClick.AddListener(() => SceneManager.LoadScene("Main Menu"));
+        botaoMenuPrincipalVitoria.onClick.AddListener(() => SceneManager.LoadScene("Main Menu"));
 
         botaoSalvarPontuacao.onClick.AddListener(SalvarPontuacao);
 

@@ -6,6 +6,8 @@ public class ControladorDeFimDeJogo : MonoBehaviour
 {
     public static ControladorDeFimDeJogo Instance { get; private set; }
 
+    [SerializeField] TransicaoDeCena transicaoDeCena;
+
     private int arvoresVivas = 0;
     private int brotos = 0;
     private int celulasEmChamas = 0;
@@ -122,13 +124,13 @@ public class ControladorDeFimDeJogo : MonoBehaviour
         DadosFinaisDeJogo.PontuacaoDuranteOJogo = Pontuacao.Instance.PontuacaoAtual;
         DadosFinaisDeJogo.PontuacaoBonus = CalcularBonus();
 
-        SceneManager.LoadScene("TelaFinal");
+        transicaoDeCena.TransicionarParaCena("TelaFinal");
     }
 
     private void Derrota()
     {
         DadosFinaisDeJogo.Venceu = false;
-        SceneManager.LoadScene("TelaFinal");
+        transicaoDeCena.TransicionarParaCena("TelaFinal");
     }
 
     private int CalcularBonus()
