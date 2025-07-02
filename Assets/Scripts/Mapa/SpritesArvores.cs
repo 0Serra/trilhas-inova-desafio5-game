@@ -7,6 +7,7 @@ public class SpritesArvores : MonoBehaviour
     public Sprite spriteCinzas;
 
     public RuntimeAnimatorController animacaoFogoController;
+    public RuntimeAnimatorController animacaoBrotoController; 
 
     public AudioClip somDeQueimando;
     public AudioClip somDeApagarFogo;

@@ -328,6 +328,7 @@ MonoBehaviour:
   spriteBroto: {fileID: 21300000, guid: c82c08b9339bbff4fb6136bd86375285, type: 3}
   spriteCinzas: {fileID: 21300000, guid: 142b3aa7b9c18eb4d984893f334f90af, type: 3}
   animacaoFogoController: {fileID: 9100000, guid: 32ac50f19914a5a4ea27fdc9e42dc1b0, type: 2}
+  animacaoBrotoController: {fileID: 9100000, guid: fd22f272bf7f98f4a9d929d353ed30f4, type: 2}
   somDeQueimando: {fileID: 8300000, guid: 7bcd100877766a34b968ae293e0f367e, type: 3}
   somDeApagarFogo: {fileID: 8300000, guid: fa18a6fc5ce7bfb4a8510b86f75d4008, type: 3}
   audioSource: {fileID: 0}
